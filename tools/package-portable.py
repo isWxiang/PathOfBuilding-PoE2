@@ -77,17 +77,19 @@ Release: https://github.com/{repository}/releases/tag/{tag}
 使用说明
 1. 将整个 ZIP 解压到有写入权限的目录，不要直接在压缩包中运行。
 2. 双击 Path of Building-PoE2.exe，无需安装编译器、Python 或 Node.js。
-3. 在 Options 中选择 English、简体中文或繁體中文，然后保存设置。
+3. 在 Options 中选择 English、简体中文、繁體中文、日本語或한국어，然后保存设置。
 4. 构筑和设置保存在解压目录；升级时先备份 Builds 与 Settings.xml。
 5. 此预发布固定到本次发布的完整性检查源；获取新版请重新下载完整 ZIP。
-日语和韩语目前只有语言入口及字体支持，正文回退英文。
+日语和韩语正文为机器译文，未人工校对；缺少的译文回退英文。
 
 Instructions
 Extract the complete ZIP to a writable folder, then run Path of Building-PoE2.exe.
-Choose English, Simplified Chinese or Traditional Chinese in Options and save.
+Choose English, Simplified Chinese, Traditional Chinese, Japanese or Korean in Options.
+Save your language setting.
 Builds and Settings.xml stay in the extracted folder. Back them up before upgrading.
 This prerelease checks integrity against this release only; download a new ZIP to upgrade.
-Japanese and Korean currently fall back to English text.
+Japanese and Korean text is machine translated and has not been manually reviewed.
+Missing translations fall back to English.
 Font files and their OFL notices are included; no system font installation is required.
 """
         (staged / "README-PORTABLE.txt").write_text(readme, encoding="utf-8")

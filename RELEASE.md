@@ -10,7 +10,16 @@ From a clean, committed checkout on Windows with Python 3.10+ and Visual Studio
 2022 Community C++ build tools, run:
 
 ```cmd
-python tools/package-portable.py --version 0.23.1-multilingual.1 --output dist/v0.23.1-multilingual.1
+release.cmd 0.23.1-multilingual.1
+```
+
+The local entry point writes the Windows portable ZIP, `manifest.xml` and
+`SHA256SUMS.txt` under `dist/v<version>-<commit>`. It does not create an installer
+or upload anything. The output directory must not already exist. For an explicit
+output directory, use the Python command directly:
+
+```cmd
+python tools/package-portable.py --version 0.23.1-multilingual.1 --output dist/portable
 ```
 
 The script builds from a temporary Git snapshot, compiles the font tools, generates
@@ -25,9 +34,11 @@ ZIP; newer releases require downloading a new complete ZIP. It does not update
 from the upstream repository. The upstream private installer workflow is skipped
 in forks.
 
-Use the latest upstream stable version plus `-multilingual.N`. Document the
-actual source branch and language coverage in the release notes. Japanese and
-Korean currently have language/font entries with English text fallback.
+The first local build uses `0.23.1-multilingual.1`. Document the actual source
+branch and language coverage in the release notes. English, Simplified Chinese,
+Traditional Chinese, Japanese and Korean resources are included. Japanese and
+Korean text is machine translated and has not been manually reviewed. Missing
+translations fall back to English.
 
 ## Prerequisites
 
