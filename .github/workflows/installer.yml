@@ -14,6 +14,8 @@ jobs:
   portable:
     if: contains(github.event.release.tag_name || github.event.inputs.tag_name, '-multilingual.')
     runs-on: windows-latest
+    env:
+      PYTHONUTF8: '1'
     permissions:
       contents: write
     steps:
